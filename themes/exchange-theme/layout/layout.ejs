@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Standards -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Basic SEO -->
+      <title><%- config.title %></title>
+      <link rel="canonical" href="<%- url.replace('/index.html', '') %>">
+    <!-- Open Graph -->
+      <meta property="fb:app_id" content="1731947456924075">
+      <% if( page.featured_image ){ %>
+        <%- open_graph({ type: 'article', image: page.featured_image }) %>
+      <% } else { %>
+        <%- open_graph({ type: 'article' }) %>
+      <% } %>
+    <!-- CSS Styles -->
+      <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+      <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,400i,700" rel="stylesheet">
+    <!-- Scripts -->
+      <script defer src="/assets/scripts.js"></script>
+    <!-- Favicon -->
+      <%- partial('partial/favicon')%>
+    <!-- End of Head -->
+  </head>
+  <body>
+    <div id="main">
+      <!-- Website Header -->
+        <%- partial('partial/navigation')%>
+      <!-- Page Content -->
+        <%- body %>
+      <!-- Website Footer -->
+        <%- partial('partial/footer')%>
+    </div>
+    <%- partial('partial/mobile-navigation')%>
+  </body>
+</html>
