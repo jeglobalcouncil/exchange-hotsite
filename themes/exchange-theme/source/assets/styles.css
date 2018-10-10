@@ -364,12 +364,12 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 
 #header {
-  background-color: #ffd727;
-  height: 40px;
-  position: relative;
-  margin: 150px auto 0;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  left: 2rem;
+  z-index: 1;
 }
-
 
 #header ul {
   margin: 0 auto;
@@ -396,16 +396,11 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   height: 28px;
 }
 
-#header ul li a:hover {
-  background: rgb(235,200,35);
-}
-
 .logo {
   position: absolute;
   left: 50%;
   margin: -48px 0 0 -108px;
 }
-
 
 @media screen and (max-width: 800px) {
   .logo {
