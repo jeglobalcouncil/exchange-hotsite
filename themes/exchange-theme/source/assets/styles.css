@@ -363,6 +363,65 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 /*                   	      NAVIGATION STYLES
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 
+#header {
+  background-color: #ffd727;
+  height: 40px;
+  position: relative;
+  margin: 150px auto 0;
+}
+
+
+#header ul {
+  margin: 0 auto;
+  width: 800px;
+  padding: 0;
+  list-style: none;
+}
+
+#header ul li {
+  float: left;
+  width: 97px;
+}
+
+#header ul li:nth-of-type(4) {
+  margin-left: 217px;
+}
+
+#header ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 12px 0 0 0;
+  height: 28px;
+}
+
+#header ul li a:hover {
+  background: rgb(235,200,35);
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  margin: -48px 0 0 -108px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .logo {
+    bottom: 100%;
+  }
+
+  #header ul li:nth-of-type(4) {
+    margin-left: 0;
+  }
+
+  #header ul {
+    width: 600px;
+    position: relative;
+  }
+}
+
 /* Basic Navigation Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
