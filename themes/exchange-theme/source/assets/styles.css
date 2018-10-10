@@ -393,20 +393,20 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 
 #header ul li {
   float: left;
-  width: 97px;
+  width: 140px;
 }
 
 #header ul li:nth-of-type(3) {
-  margin-left: 200px;
+  margin-left: 240px;
 }
 
 #header ul li a {
   text-transform: uppercase;
   text-decoration: none;
+  color: #323232;
   display: block;
   text-align: center;
-  padding: 12px 0 0 0;
-  height: 28px;
+  padding: 18px;
 }
 
 
