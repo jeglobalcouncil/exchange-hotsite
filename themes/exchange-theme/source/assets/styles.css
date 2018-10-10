@@ -386,13 +386,14 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 
 #header ul {
   margin: 0;
-  padding: 0;
+  padding: 18px 0 0 0;
   list-style: none;
 }
 
 #header ul li {
   float: left;
   width: 140px;
+  text-align: center;
 }
 
 #header ul li:nth-of-type(3) {
@@ -400,15 +401,14 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 }
 
 #header ul li a {
+  position: relative;
   text-transform: uppercase;
   text-decoration: none;
   color: #323232;
-  display: block;
-  text-align: center;
-  padding: 18px 0 0 0;
+  display: inline-block;
 }
 
-a:before, a:after {
+a:before {
   content: '';
   position: absolute;
   bottom: 2px;
@@ -417,19 +417,12 @@ a:before, a:after {
   height: 2px;
   background-color: #323232;
   opacity: 0;
-  transition: all 0.2s ease-in;
-}
-a:before {
-  transform: translateY(-8px);
-  transition: all 0.2s ease-in;
-}
-a:after {
-  opacity: 0;
-  transform: translateY(4px);
-}
-a:hover:before, a:hover:after, a:focus:before, a:focus:after {
-  opacity: 1;
   transform: translateY(0);
+  transition: all 0.15s ease-in;
+}
+a:hover:before, a:focus:before {
+  opacity: 1;
+  transform: translateY(8px);
 }
 
 @media screen and (max-width: 800px) {
