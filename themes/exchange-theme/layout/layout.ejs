@@ -10,11 +10,7 @@
       <link rel="canonical" href="<%- url.replace('/index.html', '') %>">
     <!-- Open Graph -->
       <meta property="fb:app_id" content="1731947456924075">
-      <% if( page.featured_image ){ %>
-        <%- open_graph({ type: 'article', image: page.featured_image }) %>
-      <% } else { %>
-        <%- open_graph({ type: 'article' }) %>
-      <% } %>
+      <%- open_graph({ type: 'article', image: 'config.featured_image' }) %>
     <!-- CSS Styles -->
       <link rel="stylesheet" type="text/css" href="/assets/styles.css">
       <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
@@ -34,6 +30,5 @@
       <!-- Website Footer -->
         <%- partial('partial/footer')%>
     </div>
-    <%- partial('partial/mobile-navigation')%>
   </body>
 </html>
