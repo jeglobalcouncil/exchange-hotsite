@@ -22,7 +22,7 @@
 html { font: 14px/1.6 'Open Sans', sans-serif; }
 
 @media (min-width: 400px) {
-  html { font-size: 18px; }
+  html { font-size: 16px; }
 }
 
 /* Base Styles
@@ -381,9 +381,8 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   position: absolute;
   left: 50%;
   margin: 0 -100px;
+  width: 200px;
 }
-
-#header .logo img { width: 200px; }
 
 #header ul {
   margin: 0;
@@ -406,7 +405,7 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   color: #323232;
   display: block;
   text-align: center;
-  padding: 18px;
+  padding: 18px 0;
 }
 
 
