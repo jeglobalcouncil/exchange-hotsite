@@ -371,9 +371,22 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   z-index: 1;
 }
 
-#header ul {
+#header nav {
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
-  width: 800px;
+}
+
+#header .logo {
+  position: absolute;
+  left: 50%;
+  margin: 0 -100px;
+}
+
+#header .logo img { width: 200px; }
+
+#header ul {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -383,8 +396,8 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   width: 97px;
 }
 
-#header ul li:nth-of-type(4) {
-  margin-left: 217px;
+#header ul li:nth-of-type(3) {
+  margin-left: 200px;
 }
 
 #header ul li a {
@@ -396,11 +409,9 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   height: 28px;
 }
 
-.logo {
-  position: absolute;
-  left: 50%;
-  margin: -48px 0 0 -108px;
-}
+
+
+
 
 @media screen and (max-width: 800px) {
   .logo {
