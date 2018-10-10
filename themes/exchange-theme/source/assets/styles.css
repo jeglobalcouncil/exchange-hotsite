@@ -369,6 +369,7 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   right: 2rem;
   left: 2rem;
   z-index: 1;
+  text-align: center;
 }
 
 #header nav {
@@ -388,12 +389,12 @@ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
   margin: 0;
   padding: 18px 0 0 0;
   list-style: none;
+  text-align: center;
 }
 
 #header ul li {
   float: left;
   width: 140px;
-  text-align: center;
 }
 
 #header ul li:nth-of-type(3) {
@@ -417,27 +418,22 @@ a:before {
   height: 2px;
   background-color: #323232;
   opacity: 0;
-  transform: translateY(0);
-  transition: all 0.15s ease-in;
+  transform: translateY(3px);
+  transition: all 0.1s ease-in;
 }
+
 a:hover:before, a:focus:before {
   opacity: 1;
-  transform: translateY(8px);
+  transform: translateY(6px);
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 900px) {
   .logo {
-    bottom: 100%;
-  }
-
-  #header ul li:nth-of-type(4) {
-    margin-left: 0;
-  }
-
-  #header ul {
-    width: 600px;
     position: relative;
+    left: 0;
   }
+  #header ul li { width: auto; padding: 0 18px; display: inline-block; float: none; }
+  #header ul li:nth-of-type(3) { margin-left: 0; }
 }
 
 /* Basic Navigation Styles
