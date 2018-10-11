@@ -162,13 +162,12 @@ th:last-child, td:last-child { padding-right: 0; }
 
 #header {
   padding: 1rem;
-  min-height: 3.6rem;
+  min-height: 68px;
   transform: skew(-2deg) rotate(-1deg);
   transition: all 0.2s ease-out;
   background-image: linear-gradient(to right,rgba(255,255,255,0) 50%,#fff 50%);
   background-position: 0 0;
   background-size: 202%;
-  font-size: 1.2rem;
 }
 
 #header:focus, #header:hover {
@@ -181,16 +180,28 @@ th:last-child, td:last-child { padding-right: 0; }
   margin: 0 auto;
 }
 
+#header .logo {
+  position: absolute;
+  left: 50%;
+  margin: 0 -100px;
+  width: 200px;
+}
+
 #header ul {
   margin: 0;
-  padding: 0.6rem 0 0 0;
+  padding: 20px 0 0 0;
   list-style: none;
   text-align: center;
 }
 
 #header ul li {
+  float: left;
+  width: 140px;
   display: inline-block;
-  padding: 0 0.75rem;
+}
+
+#header ul li:nth-of-type(3) {
+  margin-left: 240px;
 }
 
 #header ul li button {
@@ -200,12 +211,6 @@ th:last-child, td:last-child { padding-right: 0; }
   text-decoration: none;
   color: #323232;
   display: inline-block;
-}
-
-#header .highlight {
-  padding: 0.25rem 0.75rem;
-  background: #323232;
-  color: #fff;
 }
 
 #header button:before {
@@ -226,8 +231,43 @@ th:last-child, td:last-child { padding-right: 0; }
   transform: translateY(6px);
 }
 
+@media (max-width: 900px) {
+  #header .logo {
+    position: relative;
+  }
+  #header ul li { width: auto; padding: 0 18px; float: none; }
+  #header ul li:nth-of-type(3) { margin-left: 0; }
+}
+
+@media (max-width: 650px) {
+  #header ul { display: none; }
+}
+
 /* Hero Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.rotator {
+  display: inline-block;
+  margin: 0 auto;
+  width: auto;
+  height: 8rem;
+  overflow: hidden;
+}
+
+.rotator-deck {
+  animation: rotator 8s ease-in-out infinite;
+}
+
+.rotator-slide {
+  display: table-row;
+}
+
+.rotator h1 {
+  display: table-cell;
+  vertical-align: middle;
+  height: 8rem;
+  color: #fff;
+}
 
 .hero.container {
   margin: 1rem auto;
@@ -237,11 +277,6 @@ th:last-child, td:last-child { padding-right: 0; }
   background: rgba(0,0,0,0.3);
 }
 
-.container .logo {
-  padding: 1rem 0;
-  width: 500px;
-}
-
 @media (min-width: 850px), (min-height: 850px){
   .hero.container {
     margin: 6rem auto;
@@ -249,6 +284,15 @@ th:last-child, td:last-child { padding-right: 0; }
 }
 
 #hero { padding-bottom: 12rem; }
+
+@keyframes rotator {
+  28% { transform: translateY(0); }
+  33% { transform: translateY(-8rem); }
+  61% { transform: translateY(-8rem); }
+  66% { transform: translateY(-16rem); }
+  95% { transform: translateY(-16rem); }
+  100% { transform: translateY(0rem); }
+}
 
 #hero h1 { margin-bottom: 1.5rem; }
 #hero { position: relative; }
