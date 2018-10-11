@@ -30,41 +30,40 @@
   <body>
     <div id="main">
       <!-- Website Header -->
-        <section id="header">
-          <nav>
-            <img class="logo" src="/assets/images/exchange-program-logo.png" alt="Exchange Program"/>
-            <ul>
-              <li><a href="#intro">Intro</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#destinations">Destinations</a></li>
-              <li><a href="#signups">Sign-ups</a></li>
-            </ul>
-          </nav>
-        </section>
+
       <!-- Page Content -->
         <!-- Hero Section -->
-        <section id="big-hero" class="u-white bg-image bg-gradient-2-light">
+        <section id="hero" class="bg-image bg-gradient-1">
+          <div id="header" class="u-container">
+            <nav>
+              <img class="logo" src="/assets/images/exchange-program-logo.png" alt="Exchange Program"/>
+              <ul>
+                <li><button onclick="smoothScroll('intro');">Intro</button></li>
+                <li><button onclick="smoothScroll('experience');">Experience</button></li>
+                <li><button onclick="smoothScroll('destinations');">Destinations</button></li>
+                <li><button onclick="smoothScroll('signups');">Sign-ups</button></li>
+              </ul>
+            </nav>
+          </div>
           <img src="/assets/images/cnh-2017.jpeg">
           <video autoplay loop muted>
             <source src="/assets/videos/hero-video.webm" type="video/webm">
             <source src="/assets/videos/hero-video.mp4" type="video/mp4">
           </video>
-          <div class="container">
-            <h1>
-              <span class="pretyped">Students delivering</span>
-              <span class="typewriter" data-period="2000" data-type='["growth.","results.","projects.","change.","future."]'>growth.</span><span class="blinking"></span>
-            </h1>
+          <div class="hero container u-center">
+            <div class="rotator">
+              <div class="rotator-deck">
+                <div class="rotator-slide"><h1>Strengthen the network</h1></div>
+                <div class="rotator-slide"><h1>Live the connection</h1></div>
+                <div class="rotator-slide"><h1>Be the future</h1></div>
+              </div>
+            </div>
           </div>
-          <button class="learn-more u-button" onclick="smoothScroll('network-numbers');">
-            Learn more<br>
-            <svg viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-              <path d="M30 12 L16 24 2 12" />
-            </svg>
-          </button>
         </section>
         <!-- Main Content -->
         <div class="bg-white"><div class="container">
-          <section id="concept">
+          <div class="card">A</div>
+          <section id="intro">
             <h3>The JE Concept</h3>
             <p>Junior Enterprises (JEs) are non-profit companies run entirely by university students. They provide services, in their fields of study, to other companies, entrepreneurs and society as a whole.</p>
             <p>The projects executed by JEs allow Junior Entrepreneurs to positively impact their clients while applying their knowledge on real problems of the market.</p>
