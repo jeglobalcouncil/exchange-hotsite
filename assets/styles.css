@@ -161,7 +161,8 @@ th:last-child, td:last-child { padding-right: 0; }
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #header {
-  padding: 1rem;
+  margin: 0 -1rem;
+  padding: 1rem 2rem;
   min-height: 3.6rem;
   transform: skew(-2deg) rotate(-1deg);
   transition: all 0.2s ease-out;
