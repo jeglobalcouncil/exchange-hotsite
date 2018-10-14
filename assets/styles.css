@@ -389,6 +389,7 @@ button:hover:before, button:focus:before, .button:hover:before, .button:focus:be
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .u-p0 { padding: 0; }
+.u-mb1 { margin-bottom: 1rem; }
 .u-pb2 { padding-bottom: 2rem; }
 .u-p20 { padding: 2rem 0; }
 .u-m30 { margin: 3rem 0; }
