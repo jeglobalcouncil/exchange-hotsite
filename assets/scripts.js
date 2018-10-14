@@ -1,14 +1,3 @@
-function openDropdown(event, id) {
-  // IMPROVE THIS
-  if (event.keyCode == 13 || event.which == 13) {
-    if (document.getElementById(id).style.display == 'none'){
-      document.getElementById(id).style.display = 'block';
-    } else {
-      document.getElementById(id).style.display = 'none';
-    }
-  }
-}
-
 function smoothScroll(id) {
   var element = document.getElementById(id);
   element.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"});
@@ -31,134 +20,99 @@ function openVideoModal(videoId,maxWidth,reqHeight) {
   }
 }
 
-function openFormModal(form) {
-  var modal = document.getElementById(form);
-  modal.style.display = 'block';
-  document.getElementById(form+'-tab-anchor').focus();
-}
-
 function closeModal(modal) {
   document.getElementById(modal).style.display = 'none';
 }
 
-function toggleMobileNav() {
-  if (document.getElementById("mobileNav").style.right != "0px") {
-    document.getElementById("mobileNav").style.right = "0px";
-    document.getElementById("main").style.transform = "translateX(-250px)";
-    document.getElementById('mobileNav-tab-anchor').focus();
-  } else {
-    closeMobileNav();
+function calcCosts() {
+  var home = document.getElementById('home').value;
+  var destination = document.getElementById('destination').value;
+  var foodCosts = 300;
+  var planeCosts = 230;
+  var planeRoute = 'Chicago < > Montreal';
+  switch(destination) {
+    case 'north-am':
+        foodCosts = 300;
+            switch (home) {
+                case 'north-am':
+                  planeCosts = 230;
+                  planeRoute = 'Atlanta < > Montreal';
+                  break;
+                case 'south-am':
+                  planeCosts = 700;
+                  planeRoute = 'São Paulo < > Atlanta';
+                  break;
+                case 'europe':
+                  planeCosts = 610;
+                  planeRoute = 'Paris < > Atlanta';
+                  break;
+                case 'africa':
+                  planeCosts = 550;
+                  planeRoute = 'Tunis < > Atlanta';
+            }
+        break;
+    case 'south-am':
+        foodCosts = 250;
+            switch (home) {
+                case 'north-am':
+                  planeCosts = 630;
+                  planeRoute = 'Atlanta < > São Paulo';
+                  break;
+                case 'south-am':
+                  planeCosts = 250;
+                  planeRoute = 'São Paulo < > Mendoza';
+                  break;
+                case 'europe':
+                  planeCosts = 470;
+                  planeRoute = 'Paris < > São Paulo';
+                  break;
+                case 'africa':
+                  planeCosts = 590;
+                  planeRoute = 'Tunis < > São Paulo';
+            }
+        break;
+    case 'europe':
+        foodCosts = 350;
+            switch (home) {
+                case 'north-am':
+                  planeCosts = 400;
+                  planeRoute = 'Atlanta < > Paris';
+                  break;
+                case 'south-am':
+                  planeCosts = 520;
+                  planeRoute = 'São Paulo < > Paris';
+                  break;
+                case 'europe':
+                  planeCosts = 70;
+                  planeRoute = 'Paris < > Berlin';
+                  break;
+                case 'africa':
+                  planeCosts = 100;
+                  planeRoute = 'Tunis < > Paris';
+            }
+        break;
+    case 'africa':
+        foodCosts = 250;
+            switch (home) {
+                case 'north-am':
+                  planeCosts = 820;
+                  planeRoute = 'Atlanta < > Tunis';
+                  break;
+                case 'south-am':
+                  planeCosts = 790;
+                  planeRoute = 'São Paulo < > Tunis';
+                  break;
+                case 'europe':
+                  planeCosts = 100;
+                  planeRoute = 'Paris < > Tunis';
+                  break;
+                case 'africa':
+                  planeCosts = 230;
+                  planeRoute = 'Tunis < > Casablanca';
+            }
   }
+  var totalCosts = 120 + 80 + foodCosts + planeCosts;
+  document.getElementById('foodCosts').innerHTML = '€' + foodCosts;
+  document.getElementById('planeCosts').innerHTML = '(' + planeRoute + '): €' + planeCosts;
+  document.getElementById('totalCosts').innerHTML = '€' + totalCosts;
 }
-
-function closeMobileNav() {
-    document.getElementById("mobileNav").style.right = "-250px";
-    document.getElementById("main").style.transform = "translateX(0px)";
-}
-
-// ------------------- //
-//  Typewriter effect  //
-// ------------------- //
-
-var TxtType = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = this.txt;
-
-  var that = this;
-  var delta = 150 - Math.random() * 100;
-
-  if (this.isDeleting) {
-    delta /= 2;
-  }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function() {
-  var elements = document.getElementsByClassName('typewriter');
-  for (var i = 0; i < elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-type');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  bubbleGraph();
-};
-
-// -------------------- //
-//     Bubble Graph     //
-// -------------------- //
-
-function bubbleGraph() {
-  // var bubbleData = process.env.home_page_map_db
-  var ctx = document.getElementById('bubbleChart').getContext('2d');
-  var bubbleChart = new Chart(ctx, {
-      type: 'bubble',
-      data: {
-        datasets: bubbleData
-      },
-      options: {
-        legend: false,
-        aspectRatio: 2,
-        scales: {
-          yAxes: [{
-            display: false,
-            ticks: {
-                min: -90,
-                max: 90
-            }
-          }],
-          xAxes: [{
-            display: false,
-            ticks: {
-                min: -175,
-                max: 195
-            }
-          }]
-        },
-        elements: {
-				  point: {
-            backgroundColor: 'rgba(36,161,200,0.3)',
-            borderColor: 'rgba(36,161,200,0.6)'
-          }
-        },
-        tooltips: {
-          callbacks: {
-            label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].label;
-            }
-          }
-        }
-      }
-  });
-};

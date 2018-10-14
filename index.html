@@ -39,7 +39,7 @@
                 <source src="/assets/images/cover-video.mp4" type="video/mp4">
               </video>
             <!-- Header / Page Navigation -->
-              <div id="header" class="u-container">
+              <div id="header">
                 <nav>
                   <ul>
                     <li><button onclick="smoothScroll('intro');">Intro</button></li>
@@ -80,6 +80,10 @@
                 <p>During these weeks, you'll work part-time for your host JE, living their routine and contributing with your skills.</p>
                 <p>But you will also be challenged to do much more than that.</p>
                 <p>You will share purpose, stories & moments together with your hosts. You will leave your mark in another JE, in another network. And you'll meet several other JEs plus the best that they each have to offer.</p>
+                <blockquote>
+                  <p>"It's totally different from what you're used to in your JE. The personal learning I had on the program was quite absurd."</p>
+                  <cite>Bruna, Traveler to Argentina</cite>
+                </blockquote>
               </div>
               <div class="forty-percent cell">
                 <div class="u-p0 u-mw400 card">
@@ -107,21 +111,41 @@
               <h3>And to where can I go?</h3>
               <p>There will be hosts in 4 regions. To sign-up, you have to pick your 1st & 2nd choice of region. Your profile will then be shown to possible hosts in these locations!</p>
             </div>
-            <div class="container">
+            <div class="container u-small-text">
               <div class="one-half column">
-                <div class="card">
+                <div class="card with-cover">
+                  <div class="cover" style="background-image: url(/assets/images/usa-conf.jpg)"></div>
+                  <h2 class="cite">Canada, USA, Mexico or Costa Rica</h2>
                   <h3>North America</h3>
+                  <p>In total, there are 24+ JEs in this region, spread across some of the best univeristies of their countries.</p>
+                  <p>Some of these are established JEs while others are new initiatives, but they are all looking to grow. Help them with this goal and your work could become part of their history!</p>
+                  <p>This region has not yet participated in the Exchange Program, so vacancies are still to be confirmed.</p>
                 </div>
-                <div class="card">
+                <div class="card with-cover">
+                  <div class="cover" style="background-image: url(/assets/images/enej.jpg)"></div>
+                  <h2 class="cite">Brazil, Argentina, Chile or Colombia</h2>
                   <h3>South America</h3>
+                  <p>In Brazil, you'll find the largest national network in the world, with 670+ JEs constantly working to be the best version of themselves.</p>
+                  <p>And in Argentina, Chile and Colombia, you'll find young teams working to get more clients, recruit more members and collaborating to launch their national confederations.</p>
+                  <p>Whatever your destination, a very entrepreneurial experience awaits you!</p>
                 </div>
               </div>
               <div class="one-half column">
-                <div class="card">
+                <div class="card with-cover">
+                  <div class="cover" style="background-image: url(/assets/images/jewc.jpg)"></div>
+                  <h2 class="cite">France, Germany & many others (15 in total)</h2>
                   <h3>Europe</h3>
+                  <p>The largest and oldest JEs in the world are here! And don't let their age fool you: european JEs are innovating at a fast pace.</p>
+                  <p>France and Germany are recurring participants in the Exchange Program, but for this edition we're also working to have vacancies in other countries.</p>
+                  <p>To have an impact here, you better come very prepared!</p>
                 </div>
-                <div class="card">
+                <div class="card with-cover">
+                  <div class="cover" style="background-image: url(/assets/images/jobs.jpg)"></div>
+                  <h2 class="cite">Tunisia or Morocco</h2>
                   <h3>North Africa</h3>
+                  <p>Tunisia and Morocco are champions in participation in the Exchange Program, having already had many hosts and travelers!</p>
+                  <p>Their JEs work in a variety of fields and are all close to one another. Their Junior Entrepreneurs are filled with entrepreneurship and dedication.</p>
+                  <p>All of this is to say: come with plenty of energy and you'll find many opportunities to learn and leave an impact!</p>
                 </div>
               </div>
             </div>
@@ -137,20 +161,39 @@
             </div>
           </section>
         <!-- Costs -->
-          <section class="u-m30 u-p20 u-center bg-image bg-overlay" id="costs">
-            <img class="u-skew" src="/assets/images/bg.jpg">
+          <section class="u-m30 u-p20 u-center bg-image bg-lighten" id="costs">
+            <img class="u-skew" src="https://images.unsplash.com/photo-1485120252639-4955174c75d6?q=75&amp;fm=jpg&amp;w=1000&amp;fit=max">
             <div class="container u-skew u-width-fix">
               <h2 class="cite">Estimate your costs</h2>
               <p>Select your home region and your destination region below for a rough estimate of the program's costs! While applying as a traveler, you should research the cost of these and other items (like passports and visas).</p>
               <p><strong>Everyone who applies should be concious of the required investments.</strong></p>
             </div>
             <div class="container u-width-fix">
-              <div class="card">
-                <div class="forty-percent cell">
-                  A
-                </div>
-                <div class="sixty-percent cell">
-                  B
+              <div class="card u-small-text u-mw450">
+                <div class="row">
+                  <div class="one-third column">
+                    <h2 class="cite">Home</h2>
+                    <select onclick="calcCosts();" name="home" id="home">
+                      <option value="north-am">North America</option>
+                      <option value="south-am">South America</option>
+                      <option value="europe">Europe</option>
+                      <option value="africa">North Africa</option>
+                    </select>
+                    <h2 class="cite">Destination</h2>
+                    <select onclick="calcCosts();" name="destination" id="destination">
+                      <option value="north-am">North America</option>
+                      <option value="south-am">South America</option>
+                      <option value="europe">Europe</option>
+                      <option value="africa">North Africa</option>
+                    </select>
+                  </div>
+                  <div class="two-thirds column">
+                    <p>Participation Fee: €120</p>
+                    <p>Travel Insurance (Average): €80</p>
+                    <p>Basic Food & Transport (21 days): <span id="foodCosts">€300</span></p>
+                    <p>Plane Tickets <span id="planeCosts">(Chicago < > Montreal): €230</span></p>
+                    <p><strong>Your cost estimate: <span id="totalCosts">€730</span></strong></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -169,13 +212,22 @@
               <p><strong>Click the button bellow to sign-up as a traveler in the Exchange Program:</strong></p>
             </div>
             <div class="container u-skew u-center">
-              <button onclick="smoothScroll('signup');" class="highlight u-s150">I want to help build the future of the JE network.</button>
+              <a href="#" class="big button highlight">I want to help build the future of the JE network.</a>
             </div>
             <div class="container">
               <p>The link above will take you to the sign-up form for travelers.</p>
               <p>When signing-up, please pay attention to the instructions in the form.</p>
               <p>Sign-ups for travelers are open until <strong>November X</strong>. After that, we will work to have all matches completed until <strong>December Y</strong>.</p>
               <p>Once your match is complete and your participation confirmed, we will add you to a community of other travelers, so that you can start planning your journey!</p>
+            </div>
+            <div class="container">
+              <h3>Requirements</h3>
+              <p>The program is open to Junior Entrepreneurs from around the world!</p>
+              <p>To participate, you need to:</p>
+              <ul>
+                <li><strong>Have fluency (or at least advanced level)</strong> in English or the local language of the country you'll be travelling to;</li>
+                <li>& be currently a part of the JE movement or have a <strong>maximum of 1 year</strong> outside it.</li>
+              </ul>
             </div>
             <div class="container">
               <h3>Interested in being a host?</h3>
@@ -191,40 +243,52 @@
             <div class="container u-skew">
               <h1>Testimonials</h1>
             </div>
-            <div class="container u-width-fix">
-              <div class="offset-by-ten-percent forty-percent column">
-                <div class="card">
+            <div class="wide container u-width-fix u-small-text">
+              <div class="one-half column">
+                <div class="testimonial card">
                   <blockquote>
-                    It was really awesome
+                    <p>I had such a great time. It was so nice to get to know how JEs in Tunisia work, how they think, what kind of projects they do. I really got to know the Tunisian culture, the Tunisian JEs. I think the JE movement is so important. We grow up so much (with it), and it's nice to see that it's all over the world.</p>
+                    <cite>Luísa, Traveler to Tunisia</cite>
                   </blockquote>
                 </div>
-                <div class="card">
+                <div class="testimonial card">
                   <blockquote>
-                    It was really awesome
-                  </blockquote>
-                </div>
-                <div class="card">
-                  <blockquote>
-                    It was really awesome
+                    <p>The exchange about the similarities and differences of the two student consultancies, Janus and TECMEC, was of great benefit. The characteristics of a German JE could be shown and improved with the help of Brazilian methods. But also Karol got great ideas for the work of her JE!</p>
+                    <cite>Adrian, Host from Germany</cite>
                   </blockquote>
                 </div>
               </div>
-              <div class="forty-percent column">
-                <div class="card">
+              <div class="one-half column">
+                <div class="testimonial card">
                   <blockquote>
-                    It was really awesome
+                    <p>During our stay, we got to discover the way they work in the JE and more importantly got to discuss the differences between our practices  and how our young JE could learn from its Brazilian peers in order to be more efficient and increase its productivity. Our short but intense week in São Paulo made us rething the way we do things back in Morocco and pushed us to start a restructuration of our activities.</p>
+                    <cite>Hicham, Traveler to Brazil</cite>
                   </blockquote>
                 </div>
-                <div class="card">
+                <div class="testimonial card">
                   <blockquote>
-                    It was really awesome
+                    <p>Really strong friendships were made there. And you have the opportunity to put in practice knowledge that you acquired in your JE. So you are in a market that is different from the habitual in your country, and you have this resilience, you know how to apply your knowledge to change the reality of people abroad too!</p>
+                    <cite>Mateus, Traveler to Argentina</cite>
                   </blockquote>
                 </div>
-                <div class="card">
-                  <blockquote>
-                    It was really awesome
-                  </blockquote>
-                </div>
+              </div>
+            </div>
+            <div class="container u-skew">
+              <button onclick="smoothScroll('signup');" class="highlight">Sign-up now</button>
+            </div>
+          </section>
+        <!-- Videos -->
+          <section class="u-m30 u-p20 u-center bg-image bg-gradient u-white" id="videos">
+            <img class="u-skew" src="/assets/images/bg.jpg">
+            <div class="container u-skew">
+              <h1>Videos</h1>
+            </div>
+            <div class="container u-width-fix">
+              <div tabindex="0" onclick="openVideoModal('899022670279873','476px','476px');" class="video card">
+                <img src="/assets/images/video-1.jpg" alt="Testimonial Video #1">
+              </div>
+              <div tabindex="0" onclick="openVideoModal('933126386869501','476px','476px');" class="video card">
+                <img src="/assets/images/video-2.jpg" alt="Testimonial Video #2">
               </div>
             </div>
             <div class="container u-skew">
@@ -242,13 +306,25 @@
                 <h2 class="cite"><b>— Realization —</b></h2>
                 <a href="https://juniorenterprises.org/"><img class="u-logo-link" src="https://juniorenterprises.org/assets/logos/jegc-logo.png" alt="Junior Enterprise Global Council"/></a>
               </div>
-              <div class="two-thirds column u-pb2">
+              <div class="two-thirds column">
                 <h2 class="cite"><b>— Support —</b></h2>
-                <img src="/assets/images/je-logos.png" alt="Logos"/>
+                <img src="/assets/images/conf-logos-colored.png" alt="Logos"/>
               </div>
+            </div>
+            <div class="container u-pb2">
+              <h2 class="cite">© Junior Enterprise Global Council, 2018. Cover video credits: JEToP, CNJE & Brasil Júnior.</h2>
             </div>
           </section>
       <!-- End of Page -->
     </div>
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal u-center" style="display: none;">
+      <div class="container">
+        <div id="video-modal-tab-anchor" tabindex="-1"></div>
+        <p><button class="close" onclick="closeModal('video-modal');">×</button></p>
+        <div id="modal-content"><iframe id="modal-iframe" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjeglobalcouncil%2Fvideos%2F899022670279873%2F&amp;show_text=0" style="border: none; overflow: hidden; max-width: 476px; width: 100%; height: 476px;" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe></div>
+      </div>
+    </div>
+    <!-- End of Video Modal -->
   </body>
 </html>
