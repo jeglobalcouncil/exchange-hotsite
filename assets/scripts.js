@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', function() {
+    scrambleDestinations();
+}, false);
+
+function scrambleDestinations() {
+  var dest = [];
+  dest[0] = document.getElementById('destination-1').innerHTML;
+  dest[1] = document.getElementById('destination-2').innerHTML;
+  dest[2] = document.getElementById('destination-3').innerHTML;
+  dest[3] = document.getElementById('destination-4').innerHTML;
+  for (var i = dest.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = dest[i];
+      dest[i] = dest[j];
+      dest[j] = temp;
+  }
+  document.getElementById('destination-1').innerHTML = dest[0];
+  document.getElementById('destination-2').innerHTML = dest[1];
+  document.getElementById('destination-3').innerHTML = dest[2];
+  document.getElementById('destination-4').innerHTML = dest[3];
+}
+
 function smoothScroll(id) {
   var element = document.getElementById(id);
   element.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"});
