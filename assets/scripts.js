@@ -7,7 +7,6 @@ function scrambleOddDestinations() {
   var dest = [];
   dest[0] = document.getElementById('destination-1').innerHTML;
   dest[1] = document.getElementById('destination-3').innerHTML;
-  dest[2] = document.getElementById('destination-5').innerHTML;
   for (var i = dest.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = dest[i];
@@ -16,7 +15,6 @@ function scrambleOddDestinations() {
   }
   document.getElementById('destination-1').innerHTML = dest[0];
   document.getElementById('destination-3').innerHTML = dest[1];
-  document.getElementById('destination-5').innerHTML = dest[2];
 }
 
 function scrambleEvenDestinations() {
